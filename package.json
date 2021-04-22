@@ -1,0 +1,19 @@
+{
+  "name": "glennjolly_3_20042021",
+  "version": "1.0.0",
+  "description": "Projet_3_openclassroom",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/style.scss:./css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fenzrael/GlennJOLLY_3_20042021.git"
+  },
+  "author": "GlennJOLLY",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Fenzrael/GlennJOLLY_3_20042021/issues"
+  },
+  "homepage": "https://github.com/Fenzrael/GlennJOLLY_3_20042021#readme"
+}
