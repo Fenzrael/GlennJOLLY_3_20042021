@@ -65,12 +65,212 @@ $color-tertiary: #99E2D0;
         &__submit {
             text-align: center;
             width: 12rem;
-            border: 2px solid $color-primary;
+            border: 1px solid #dadada;
             border-radius: 40px;
+            box-shadow: 4px 4px 4px #dadada;
             padding: 1rem 0;
             margin-bottom: 1rem;;
-            background-color: $color-primary;
+            background: linear-gradient(-10deg, $color-primary, $color-secondary);
             color: white;
         }    
 }
 
+.fonction {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+        &__list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: inherit;
+            width: 100%;
+            list-style-type: none;
+        }
+
+        &__choice {
+            border: 1px solid #f6f6f6;
+            border-radius: 20px / 20px;
+            width: 20rem;
+            margin: 0.5rem;
+            padding: 1.5rem;
+            background-color: #f6f6f6;
+        }
+
+        &__composition {
+            border: 1px solid #f6f6f6;
+            border-radius: 20px / 20px;
+            width: 20rem;
+            margin: 0.5rem;
+            padding: 1.5rem;
+            background-color: #f6f6f6;
+        }
+
+        &__tasty {
+            border: 1px solid #f6f6f6;
+            border-radius: 20px / 20px;
+            width: 20rem;
+            margin: 0.5rem;
+            padding: 1.5rem;
+            background-color: #f6f6f6;
+        }
+}
+
+// utiliser boucle @for
+.fonction__choice::before {
+    content:"1";
+    position: relative;
+    right: 2.2rem;
+    border: 1px solid $color-primary;
+    border-radius: 50%;
+    padding:0 0.3rem 0 0.3rem;
+    color: white;
+    background: $color-primary;
+}
+
+.fonction__composition::before {
+    content:"2";
+    position: relative;
+    right: 2.2rem;
+    border: 1px solid $color-primary;
+    border-radius: 50%;
+    padding:0 0.3rem 0 0.3rem;
+    color: white;
+    background: $color-primary;
+}
+
+.fonction__tasty::before {
+    content:"3";
+    position: relative;
+    right: 2.2rem;
+    border: 1px solid $color-primary;
+    border-radius: 50%;
+    padding:0 0.3rem 0 0.3rem;
+    color: white;
+    background: $color-primary;
+}
+
+.fonction__icon {
+    padding-right: 1.2rem;
+}
+
+.menuCard {
+    border:1px solid #f6f6f6;
+    background-color: #f6f6f6;
+
+    &__selection {
+        text-decoration: none;
+        border: 0;
+        width: auto;
+    }
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__card {
+        object-fit: cover;
+        width: 300px;
+        height:auto;
+        overflow: hidden;
+        border: 1px transparent #f6f6f6;
+        border-radius: 10px;
+        background-color: white;
+        position: relative;
+    }
+
+    &__image {
+        object-fit: cover;
+        overflow: hidden;
+        width:20rem;
+        height: 13rem;
+    }
+}
+
+.menuCard__new {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding:0.2rem;
+    font-weight: 700;
+    border: 1px solid $color-tertiary;
+    background-color: $color-tertiary;
+}
+
+.menuCard__description {
+    color: black;
+    
+}
+
+.menuCard__title1 {
+    margin: inherit;
+    margin-left: 0.5rem;
+    margin-top: 1rem;
+}
+.menuCard__subtitle {
+    margin: inherit;
+    margin-left: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.menuCard__icon {
+    position: absolute;
+    font-size: 2rem;
+    top: 14.6rem;
+    left: 16rem;
+}
+.information {
+    background-color: #353535;
+    color: white;
+    padding: 0;
+    margin: 0;
+
+        &__list {
+            margin: inherit;
+            padding: 1rem;
+            padding-left: 2rem;
+        }
+
+        &__title {
+            font-family:'Shrikhand';
+            font-weight: 500;
+            margin: inherit;
+            padding: 1rem;
+            padding-left: 2rem;
+            padding-bottom: 0;
+        }
+
+        &__text {
+            margin: 0;
+            margin-left: 1rem;
+        }
+
+        &__proposition {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding-bottom: 0.5rem;
+        }
+
+        &__partnair {
+            display: flex;
+            align-items: center;
+            padding-bottom: 0.5rem;
+        }
+
+        &__mention {
+            list-style-type: none;
+            padding-bottom: 0.5rem;
+        }
+
+        &__contact {
+            list-style-type: none;
+        }
+}
+
+.information a {
+    text-decoration: none;
+    color: white;
+}
