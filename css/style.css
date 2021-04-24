@@ -1,10 +1,65 @@
 @font-face {
-  font-family: "Roboto", sans-serif;
-  src: url("/fonts/roboto/Roboto-Regular.ttf");
+  font-family: "Roboto";
+  src: url("/fonts/roboto/Roboto-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Shrikhand";
+  src: url("/fonts/shrikhand/Shrikhand-Regular.ttf") format("truetype");
 }
 body {
+  font-family: "Roboto", sans-serif;
   margin: 0;
   padding: 0;
+}
+
+.heading {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.heading__title {
+  font-family: "Shrikhand";
+  flex: 1;
+  margin: 0;
+  padding: 1rem;
+  box-shadow: 1px 1px 5px #cfcfcf;
+}
+.heading__search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  margin: 0;
+  padding: 1rem;
+  box-shadow: 1px 1px 5px #cfcfcf;
+  background-color: #eaeaea;
+}
+.heading__textarea {
+  border: none;
+  background-color: #eaeaea;
+  margin-left: 1rem;
+}
+
+.reservation {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  background-color: #f6f6f6;
+}
+.reservation__title {
+  margin: 1rem 0 0 0;
+}
+.reservation__submit {
+  text-align: center;
+  width: 12rem;
+  border: 2px solid #9356DC;
+  border-radius: 40px;
+  padding: 1rem 0;
+  margin-bottom: 1rem;
+  background-color: #9356DC;
+  color: white;
 }
 
 /*# sourceMappingURL=style.css.map */
