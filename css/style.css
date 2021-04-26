@@ -10,8 +10,26 @@ body {
   font-family: "Roboto", sans-serif;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
+@keyframes progress-heart {
+  0% {
+    transform: scaley(0);
+  }
+  10% {
+    transform: scaley(0.1);
+  }
+  20% {
+    transform: scaley(0.2);
+  }
+  30% {
+    transform: scaley(0.3);
+  }
+  40% {
+    transform: scaley(0.4);
+  }
+}
 .heading {
   display: flex;
   flex-wrap: wrap;
@@ -34,10 +52,15 @@ body {
   box-shadow: 1px 1px 5px #cfcfcf;
   background-color: #eaeaea;
 }
-.heading__textarea {
+
+.search__textarea {
   border: none;
   background-color: #eaeaea;
   margin-left: 1rem;
+}
+.search__textarea::placeholder {
+  color: black;
+  font-weight: bold;
 }
 
 .reservation {
@@ -51,16 +74,20 @@ body {
 .reservation__title {
   margin: 1rem 0 0 0;
 }
+.reservation__definition {
+  margin: 0.5rem 2.5rem;
+}
 .reservation__submit {
   text-align: center;
-  width: 12rem;
+  width: 13rem;
   border: 1px solid #dadada;
   border-radius: 40px;
   box-shadow: 4px 4px 4px #dadada;
-  padding: 1rem 0;
-  margin-bottom: 1rem;
+  padding: 0.8rem 0rem;
+  margin: 1rem 0 3rem 0;
   background: linear-gradient(-10deg, #9356DC, #FF79DA);
   color: white;
+  cursor: pointer;
 }
 
 .fonction {
@@ -68,6 +95,11 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+}
+.fonction__title {
+  margin-left: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 .fonction__list {
   display: flex;
@@ -77,82 +109,120 @@ body {
   width: 100%;
   list-style-type: none;
 }
-.fonction__choice {
-  border: 1px solid #f6f6f6;
-  border-radius: 20px/20px;
-  width: 20rem;
-  margin: 0.5rem;
-  padding: 1.5rem;
-  background-color: #f6f6f6;
-}
-.fonction__composition {
-  border: 1px solid #f6f6f6;
-  border-radius: 20px/20px;
-  width: 20rem;
-  margin: 0.5rem;
-  padding: 1.5rem;
-  background-color: #f6f6f6;
-}
-.fonction__tasty {
-  border: 1px solid #f6f6f6;
-  border-radius: 20px/20px;
-  width: 20rem;
-  margin: 0.5rem;
-  padding: 1.5rem;
-  background-color: #f6f6f6;
-}
 
-.fonction__choice::before {
+.choice {
+  border: 1px solid #f6f6f6;
+  border-radius: 20px/20px;
+  width: 20rem;
+  margin: 0.5rem;
+  padding: 1.5rem;
+  background-color: #f6f6f6;
+  position: relative;
+}
+.choice__icon {
+  padding-right: 1.4rem;
+  font-size: 1.3rem;
+  color: #7e7e7e;
+}
+.choice::before {
   content: "1";
-  position: relative;
-  right: 2.2rem;
+  position: absolute;
+  left: -0.8rem;
   border: 1px solid #9356DC;
   border-radius: 50%;
   padding: 0 0.3rem 0 0.3rem;
   color: white;
   background: #9356DC;
 }
-
-.fonction__composition::before {
-  content: "2";
-  position: relative;
-  right: 2.2rem;
-  border: 1px solid #9356DC;
-  border-radius: 50%;
-  padding: 0 0.3rem 0 0.3rem;
-  color: white;
-  background: #9356DC;
+.choice:hover {
+  background-color: #f2eafb;
+  cursor: pointer;
+}
+.choice:hover > .choice__icon {
+  color: #9356DC;
 }
 
-.fonction__tasty::before {
-  content: "3";
+.composition {
+  border: 1px solid #f6f6f6;
+  border-radius: 20px/20px;
+  width: 20rem;
+  margin: 0.5rem;
+  padding: 1.5rem;
+  background-color: #f6f6f6;
   position: relative;
-  right: 2.2rem;
-  border: 1px solid #9356DC;
-  border-radius: 50%;
-  padding: 0 0.3rem 0 0.3rem;
-  color: white;
-  background: #9356DC;
 }
-
-.fonction__icon {
+.composition__icon {
   padding-right: 1.2rem;
+  color: #7e7e7e;
+}
+.composition::before {
+  content: "2";
+  position: absolute;
+  left: -0.8rem;
+  border: 1px solid #9356DC;
+  border-radius: 50%;
+  padding: 0 0.3rem 0 0.3rem;
+  color: white;
+  background: #9356DC;
+}
+.composition:hover {
+  background-color: #f2eafb;
+  cursor: pointer;
+}
+.composition:hover > .composition__icon {
+  color: #9356DC;
+}
+
+.tasty {
+  border: 1px solid #f6f6f6;
+  border-radius: 20px/20px;
+  width: 20rem;
+  margin: 0.5rem;
+  padding: 1.5rem;
+  background-color: #f6f6f6;
+  position: relative;
+}
+.tasty__icon {
+  padding-right: 1rem;
+  color: #7e7e7e;
+}
+.tasty::before {
+  content: "3";
+  position: absolute;
+  left: -0.8rem;
+  border: 1px solid #9356DC;
+  border-radius: 50%;
+  padding: 0 0.3rem 0 0.3rem;
+  color: white;
+  background: #9356DC;
+}
+.tasty:hover {
+  background-color: #f2eafb;
+  cursor: pointer;
+}
+.tasty:hover > .tasty__icon {
+  color: #9356DC;
 }
 
 .menuCard {
   border: 1px solid #f6f6f6;
   background-color: #f6f6f6;
 }
-.menuCard__selection {
-  text-decoration: none;
-  border: 0;
-  width: auto;
+.menuCard__title {
+  margin-left: 1rem;
 }
 .menuCard__list {
   display: flex;
   flex-wrap: wrap;
 }
-.menuCard__card {
+
+.list__selection {
+  text-decoration: none;
+  border: 0;
+  width: auto;
+}
+
+.selection__card {
   object-fit: cover;
   width: 300px;
   height: auto;
@@ -162,14 +232,17 @@ body {
   background-color: white;
   position: relative;
 }
-.menuCard__image {
+.selection__description {
+  color: black;
+}
+
+.card__image {
   object-fit: cover;
   overflow: hidden;
   width: 20rem;
   height: 13rem;
 }
-
-.menuCard__new {
+.card__new {
   position: absolute;
   top: 1rem;
   right: 1rem;
@@ -179,27 +252,21 @@ body {
   background-color: #99E2D0;
 }
 
-.menuCard__description {
-  color: black;
-}
-
-.menuCard__title1 {
+.description__title {
   margin: inherit;
   margin-left: 0.5rem;
   margin-top: 1rem;
 }
-
-.menuCard__subtitle {
+.description__subtitle {
   margin: inherit;
   margin-left: 0.5rem;
   margin-bottom: 1rem;
 }
-
-.menuCard__icon {
+.description__icon {
   position: absolute;
   font-size: 2rem;
   top: 14.6rem;
-  left: 16rem;
+  right: 1rem;
 }
 
 .information {
@@ -207,11 +274,6 @@ body {
   color: white;
   padding: 0;
   margin: 0;
-}
-.information__list {
-  margin: inherit;
-  padding: 1rem;
-  padding-left: 2rem;
 }
 .information__title {
   font-family: "Shrikhand";
@@ -221,32 +283,109 @@ body {
   padding-left: 2rem;
   padding-bottom: 0;
 }
-.information__text {
-  margin: 0;
-  margin-left: 1rem;
+.information__list {
+  margin: inherit;
+  padding: 1rem;
+  padding-left: 2rem;
 }
-.information__proposition {
+
+.proposition {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   padding-bottom: 0.5rem;
 }
-.information__partnair {
+.proposition__text {
+  margin: 0;
+  margin-left: 1rem;
+}
+
+.partnair {
   display: flex;
+  justify-content: flex-start;
   align-items: center;
   padding-bottom: 0.5rem;
 }
-.information__mention {
+.partnair__text {
+  margin: 0;
+  margin-left: 0.5rem;
+}
+
+.mention {
   list-style-type: none;
   padding-bottom: 0.5rem;
 }
-.information__contact {
+.mention__mail {
   list-style-type: none;
-}
-
-.information a {
   text-decoration: none;
   color: white;
+}
+
+@media only screen and (max-width: 761px) {
+  .heading {
+    display: block;
+  }
+  .heading__title {
+    text-align: center;
+    font-weight: 500;
+    font-size: 2rem;
+  }
+
+  .search {
+    width: auto;
+  }
+  .search__icon {
+    width: auto;
+    margin-left: 3.5rem;
+  }
+  .search__text-area {
+    width: 0;
+  }
+
+  .fonction__title {
+    margin: 2rem 0 0 0.7rem;
+    font-size: 1.2rem;
+  }
+  .fonction__list {
+    margin-bottom: 3rem;
+  }
+
+  .choice, .composition, .tasty {
+    width: 17rem;
+    font-weight: bold;
+  }
+
+  .reservation__title {
+    margin-left: 0.5rem;
+    font-weight: bold;
+  }
+
+  .selection {
+    width: auto;
+  }
+
+  .menuCard__title {
+    font-size: 1.2rem;
+    margin-left: 0.7rem;
+  }
+
+  .card {
+    display: inline-block;
+    flex: none;
+    margin: 0;
+    margin: 0.8rem;
+    width: auto;
+  }
+  .card__image {
+    width: 100%;
+  }
+
+  .information__title {
+    padding-left: 0.8rem;
+  }
+  .information__list {
+    padding-left: 0.8rem;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

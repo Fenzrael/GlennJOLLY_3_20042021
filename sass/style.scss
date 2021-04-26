@@ -12,12 +12,48 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 $color-primary: #9356DC;
 $color-secondary: #FF79DA;
 $color-tertiary: #99E2D0;
 
+$color-degraded: linear-gradient(-10deg, $color-primary, $color-secondary);
+
+
+
+@mixin before {
+    position: absolute;
+    left: -0.8rem;
+    border: 1px solid $color-primary;
+    border-radius: 50%;
+    padding:0 0.3rem 0 0.3rem;
+    color: white;
+    background: $color-primary;
+}
+
+@keyframes progress-heart {
+    0% {
+        transform: scaley(0);
+    }
+
+    10% {
+        transform: scaley(0.1);
+    }
+
+    20% {
+        transform: scaley(0.2);
+    }
+
+    30% {
+        transform: scaley(0.3);
+    }
+
+    40% {
+        transform: scaley(0.4);
+    }
+}
 .heading {
     display: flex;
     flex-wrap: wrap;
@@ -41,13 +77,18 @@ $color-tertiary: #99E2D0;
         box-shadow: 1px 1px 5px #cfcfcf;
         background-color: #eaeaea;
     }
-
-    &__textarea {
-        border: none;
-        background-color: #eaeaea;
-        margin-left: 1rem;
-    }
 }
+
+.search__textarea {
+    border: none;
+    background-color: #eaeaea;
+    margin-left: 1rem;
+        &::placeholder {
+            color: black;
+            font-weight: bold;
+        }
+}
+
 
 .reservation {
 
@@ -62,24 +103,35 @@ $color-tertiary: #99E2D0;
             margin: 1rem 0 0 0;
         }
 
+        &__definition {
+            margin: 0.5rem 2.5rem;
+        }
         &__submit {
-            text-align: center;
-            width: 12rem;
+            text-align:center;
+            width: 13rem;
             border: 1px solid #dadada;
             border-radius: 40px;
             box-shadow: 4px 4px 4px #dadada;
-            padding: 1rem 0;
-            margin-bottom: 1rem;;
-            background: linear-gradient(-10deg, $color-primary, $color-secondary);
+            padding: 0.8rem 0rem;
+            margin: 1rem 0 3rem 0;
+            background: $color-degraded;
             color: white;
+            cursor: pointer;
         }    
 }
+
 
 .fonction {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+
+        &__title {
+            margin-left: 1rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
 
         &__list {
             display: flex;
@@ -89,87 +141,114 @@ $color-tertiary: #99E2D0;
             width: 100%;
             list-style-type: none;
         }
+}
 
-        &__choice {
-            border: 1px solid #f6f6f6;
-            border-radius: 20px / 20px;
-            width: 20rem;
-            margin: 0.5rem;
-            padding: 1.5rem;
-            background-color: #f6f6f6;
+.choice {
+    border: 1px solid #f6f6f6;
+    border-radius: 20px / 20px;
+    width: 20rem;
+    margin: 0.5rem;
+    padding: 1.5rem;
+    background-color: #f6f6f6;
+    position: relative;
+
+        &__icon {
+            padding-right: 1.4rem;
+            font-size: 1.3rem;
+            color: #7e7e7e;
         }
 
-        &__composition {
-            border: 1px solid #f6f6f6;
-            border-radius: 20px / 20px;
-            width: 20rem;
-            margin: 0.5rem;
-            padding: 1.5rem;
-            background-color: #f6f6f6;
+        &::before {
+            content:"1";
+            @include before;
         }
 
-        &__tasty {
-            border: 1px solid #f6f6f6;
-            border-radius: 20px / 20px;
-            width: 20rem;
-            margin: 0.5rem;
-            padding: 1.5rem;
-            background-color: #f6f6f6;
+        &:hover {
+            background-color: lighten($color-primary, 35%);
+            cursor: pointer;
+                > .choice__icon {
+                    color: $color-primary;
+                }
         }
 }
 
-// utiliser boucle @for
-.fonction__choice::before {
-    content:"1";
+.composition {
+    border: 1px solid #f6f6f6;
+    border-radius: 20px / 20px;
+    width: 20rem;
+    margin: 0.5rem;
+    padding: 1.5rem;
+    background-color: #f6f6f6;
     position: relative;
-    right: 2.2rem;
-    border: 1px solid $color-primary;
-    border-radius: 50%;
-    padding:0 0.3rem 0 0.3rem;
-    color: white;
-    background: $color-primary;
+
+        &__icon{
+            padding-right: 1.2rem;
+            color: #7e7e7e;
+        }
+
+        &::before {
+            content:"2";
+            @include before;
+        }
+
+        &:hover {
+            background-color: lighten($color-primary, 35%);
+            cursor: pointer;
+                > .composition__icon {
+                    color: $color-primary;
+                }
+        }
 }
 
-.fonction__composition::before {
-    content:"2";
+.tasty {
+    border: 1px solid #f6f6f6;
+    border-radius: 20px / 20px;
+    width: 20rem;
+    margin: 0.5rem;
+    padding: 1.5rem;
+    background-color: #f6f6f6;
     position: relative;
-    right: 2.2rem;
-    border: 1px solid $color-primary;
-    border-radius: 50%;
-    padding:0 0.3rem 0 0.3rem;
-    color: white;
-    background: $color-primary;
-}
 
-.fonction__tasty::before {
-    content:"3";
-    position: relative;
-    right: 2.2rem;
-    border: 1px solid $color-primary;
-    border-radius: 50%;
-    padding:0 0.3rem 0 0.3rem;
-    color: white;
-    background: $color-primary;
-}
+        &__icon {
+            padding-right: 1rem;
+            color: #7e7e7e;
+        }
 
-.fonction__icon {
-    padding-right: 1.2rem;
+        &::before {
+            content:"3";
+            @include before;
+        }
+
+        &:hover {
+            background-color: lighten($color-primary, 35%);
+            cursor: pointer;
+                > .tasty__icon {
+                    color:$color-primary;
+                }
+        }
 }
 
 .menuCard {
     border:1px solid #f6f6f6;
     background-color: #f6f6f6;
 
-    &__selection {
-        text-decoration: none;
-        border: 0;
-        width: auto;
-    }
-    &__list {
-        display: flex;
-        flex-wrap: wrap;
-    }
+        &__title {
+            margin-left: 1rem;
+        }
 
+        &__list {
+            display: flex;
+            flex-wrap: wrap;
+        }
+}
+
+.list__selection {
+    text-decoration: none;
+    border: 0;
+    width: auto;
+}
+
+.selection {
     &__card {
         object-fit: cover;
         width: 300px;
@@ -181,59 +260,58 @@ $color-tertiary: #99E2D0;
         position: relative;
     }
 
+    &__description {
+        color: black;
+    }
+}
+
+.card {
     &__image {
         object-fit: cover;
         overflow: hidden;
         width:20rem;
         height: 13rem;
     }
+
+    &__new {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        padding:0.2rem;
+        font-weight: 700;
+        border: 1px solid $color-tertiary;
+        background-color: $color-tertiary;
+    }
 }
 
-.menuCard__new {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    padding:0.2rem;
-    font-weight: 700;
-    border: 1px solid $color-tertiary;
-    background-color: $color-tertiary;
+.description {
+    &__title {
+        margin: inherit;
+        margin-left: 0.5rem;
+        margin-top: 1rem;
+    }
+
+    &__subtitle {
+        margin: inherit;
+        margin-left: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    &__icon {
+        position: absolute;
+        font-size: 2rem;
+        top: 14.6rem;
+        right: 1rem;
+    }
 }
 
-.menuCard__description {
-    color: black;
-    
-}
-
-.menuCard__title1 {
-    margin: inherit;
-    margin-left: 0.5rem;
-    margin-top: 1rem;
-}
-.menuCard__subtitle {
-    margin: inherit;
-    margin-left: 0.5rem;
-    margin-bottom: 1rem;
-}
-
-.menuCard__icon {
-    position: absolute;
-    font-size: 2rem;
-    top: 14.6rem;
-    left: 16rem;
-}
 .information {
     background-color: #353535;
     color: white;
     padding: 0;
     margin: 0;
 
-        &__list {
-            margin: inherit;
-            padding: 1rem;
-            padding-left: 2rem;
-        }
-
-        &__title {
+        &__title{
             font-family:'Shrikhand';
             font-weight: 500;
             margin: inherit;
@@ -242,35 +320,121 @@ $color-tertiary: #99E2D0;
             padding-bottom: 0;
         }
 
+        &__list {
+            margin: inherit;
+            padding: 1rem;
+            padding-left: 2rem;
+        }
+}
+       
+.proposition {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-bottom: 0.5rem;
+
         &__text {
             margin: 0;
             margin-left: 1rem;
         }
+}
 
-        &__proposition {
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            padding-bottom: 0.5rem;
-        }
+.partnair {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-bottom: 0.5rem;
 
-        &__partnair {
-            display: flex;
-            align-items: center;
-            padding-bottom: 0.5rem;
-        }
-
-        &__mention {
-            list-style-type: none;
-            padding-bottom: 0.5rem;
-        }
-
-        &__contact {
-            list-style-type: none;
+        &__text {
+            margin: 0;
+            margin-left: 0.5rem;
         }
 }
 
-.information a {
-    text-decoration: none;
-    color: white;
+.mention {
+    list-style-type: none;
+    padding-bottom: 0.5rem;
+        &__mail {
+            list-style-type: none;
+            text-decoration: none;
+            color: white; 
+        }
 }
+
+@media only screen and (max-width:761px) {
+.heading {
+    display: block;
+    &__title {
+        text-align: center;
+        font-weight: 500;
+        font-size: 2rem;
+    }
+}
+
+.search {
+    width: auto;
+    &__icon {
+        width:auto;
+        margin-left: 3.5rem;
+    }
+
+    &__text-area {
+        width: 0;
+    }
+}
+
+.fonction {
+    &__title {
+        margin: 2rem 0 0 0.7rem;
+        font-size: 1.2rem;
+    }
+
+    &__list {
+        margin-bottom: 3rem;
+    }
+}
+
+.choice, .composition, .tasty {
+    width: 17rem;
+    font-weight: bold;
+}
+
+.reservation__title {
+    margin-left: 0.5rem;
+    font-weight: bold;
+}
+
+.selection {
+    width: auto;
+}
+
+.menuCard__title {
+    font-size: 1.2rem;
+    margin-left: 0.7rem;
+}
+
+.card {
+    display: inline-block;
+    flex: none;
+    margin: 0;
+    margin: 0.8rem;
+    width: auto;
+
+        &__image {
+            width: 100%;  
+        }
+}
+
+.information {
+    
+    &__title {
+        padding-left: 0.8rem;
+    }
+
+    &__list {
+        padding-left: 0.8rem;
+    }
+}
+}
+
+
