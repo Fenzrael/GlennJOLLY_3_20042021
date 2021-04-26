@@ -4,7 +4,7 @@
 }
 @font-face {
   font-family: "Shrikhand";
-  src: url("/fonts/shrikhand/Shrikhand-Regular.ttf") format("truetype");
+  src: url("/fonts/shrikhand/Shrikhand-Regular.ttf") format("truetype"), url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 }
 body {
   font-family: "Roboto", sans-serif;
@@ -326,7 +326,6 @@ body {
     display: block;
   }
   .heading__title {
-    font-family: "Shrikhand";
     text-align: center;
     font-weight: 500;
     font-size: 2rem;
