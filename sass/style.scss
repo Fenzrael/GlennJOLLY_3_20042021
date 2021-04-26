@@ -5,7 +5,8 @@
 
 @font-face {
     font-family:'Shrikhand';
-    src: url('/fonts/shrikhand/Shrikhand-Regular.ttf') format('truetype');
+    src: url('/fonts/shrikhand/Shrikhand-Regular.ttf') format('truetype'),
+         url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
 }
 
 body {
