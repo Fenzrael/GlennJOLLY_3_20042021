@@ -34,27 +34,6 @@ $color-degraded: linear-gradient(-10deg, $color-primary, $color-secondary);
     background: $color-primary;
 }
 
-@keyframes progress-heart {
-    0% {
-        transform: scaley(0);
-    }
-
-    10% {
-        transform: scaley(0.1);
-    }
-
-    20% {
-        transform: scaley(0.2);
-    }
-
-    30% {
-        transform: scaley(0.3);
-    }
-
-    40% {
-        transform: scaley(0.4);
-    }
-}
 .heading {
     display: flex;
     flex-wrap: wrap;
@@ -118,6 +97,13 @@ $color-degraded: linear-gradient(-10deg, $color-primary, $color-secondary);
             background: $color-degraded;
             color: white;
             cursor: pointer;
+            transition: all 400ms ;
+            
+                &:hover {
+                    transform: scale(1.1);
+                    opacity:0.7;
+                    box-shadow: 6px 6px 3px #dadada;
+                }
         }    
 }
 
@@ -282,6 +268,7 @@ $color-degraded: linear-gradient(-10deg, $color-primary, $color-secondary);
         font-weight: 700;
         border: 1px solid $color-tertiary;
         background-color: $color-tertiary;
+        color:darken($color-tertiary, 40%);
     }
 }
 
@@ -299,11 +286,35 @@ $color-degraded: linear-gradient(-10deg, $color-primary, $color-secondary);
     }
 
     &__icon {
-        position: absolute;
+        position:absolute;
         font-size: 2rem;
         top: 14.6rem;
         right: 1rem;
+        background-color: transparent;
+        &--fill {
+            opacity: 0;
+        }
     }
+}
+
+@keyframes opacity {
+    from {
+      opacity: 0;
+      transform: scaleY(0);
+    }
+    to {
+      opacity: 1;
+      transform: scaleY(1);
+    }
+  }
+
+.description__icon--fill:hover {
+    background: $color-degraded;
+    -webkit-background-clip: text;
+    color: transparent;
+    cursor: pointer;
+    animation: opacity 0.2s ease-in-out forwards;
+    
 }
 
 .information {
@@ -363,79 +374,78 @@ $color-degraded: linear-gradient(-10deg, $color-primary, $color-secondary);
 }
 
 @media only screen and (max-width:761px) {
-.heading {
-    display: block;
-    &__title {
-        text-align: center;
-        font-weight: 500;
-        font-size: 2rem;
-    }
-}
-
-.search {
-    width: auto;
-    &__icon {
-        width:auto;
-        margin-left: 3.5rem;
-    }
-
-    &__text-area {
-        width: 0;
-    }
-}
-
-.fonction {
-    &__title {
-        margin: 2rem 0 0 0.7rem;
-        font-size: 1.2rem;
-    }
-
-    &__list {
-        margin-bottom: 3rem;
-    }
-}
-
-.choice, .composition, .tasty {
-    width: 17rem;
-    font-weight: bold;
-}
-
-.reservation__title {
-    margin-left: 0.5rem;
-    font-weight: bold;
-}
-
-.selection {
-    width: auto;
-}
-
-.menuCard__title {
-    font-size: 1.2rem;
-    margin-left: 0.7rem;
-}
-
-.card {
-    display: inline-block;
-    flex: none;
-    margin: 0;
-    margin: 0.8rem;
-    width: auto;
-
-        &__image {
-            width: 100%;  
+    .heading {
+        display: block;
+        &__title {
+            text-align: center;
+            font-weight: 500;
+            font-size: 2rem;
         }
-}
+    }
 
-.information {
+    .search {
+        width: auto;
+        &__icon {
+            width:auto;
+            margin-left: 3.5rem;
+        }
+
+        &__text-area {
+            width: 0;
+        }
+    }
+
+    .fonction {
+        &__title {
+            margin: 2rem 0 0 0.7rem;
+            font-size: 1.2rem;
+        }
+
+        &__list {
+            margin-bottom: 3rem;
+        }
+    }
+
+    .choice, .composition, .tasty {
+        width: 17rem;
+        font-weight: bold;
+    }
+
+    .reservation__title {
+        margin-left: 0.5rem;
+        font-weight: bold;
+    }
+
+    .selection {
+        width: auto;
+    }
+
+    .menuCard__title {
+        font-size: 1.2rem;
+        margin-left: 0.7rem;
+    }
+
+    .card {
+        display: inline-block;
+        flex: none;
+        margin: 0;
+        margin: 0.8rem;
+        width: auto;
+            &__image {
+                width: 100%;  
+            }
+    }
+
+    .information {
     
-    &__title {
-        padding-left: 0.8rem;
-    }
+        &__title {
+            padding-left: 0.8rem;
+        }
 
-    &__list {
-        padding-left: 0.8rem;
+        &__list {
+            padding-left: 0.8rem;
+        }
     }
-}
 }
 
 
