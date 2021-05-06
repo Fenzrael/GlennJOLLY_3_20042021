@@ -64,7 +64,7 @@ $color-degraded: linear-gradient(-10deg, $color-primary, $color-secondary);
 @keyframes apparition {
     0% {
         opacity: 0;
-        transform-origin: bottom 50%;
+        transform-origin: bottom;
         transform: translateY(0);
     }
     
@@ -209,7 +209,7 @@ $color-degraded: linear-gradient(-10deg, $color-primary, $color-secondary);
         width: auto;
         height:3rem;
         padding: 0 3rem;
-        margin:2rem 8rem;
+        margin:2rem 20rem;
     }
 }
 
@@ -504,7 +504,7 @@ $color-degraded: linear-gradient(-10deg, $color-primary, $color-secondary);
         border:2px solid $color-tertiary;
         background-color: $color-tertiary;
         color: white;
-        border-radius: 0 30% 30% 0;
+        border-radius: 0 28% 28% 0;
         margin-right:0;
         width: 3.5rem;
         font-size: 1.2rem;
@@ -583,8 +583,13 @@ $color-degraded: linear-gradient(-10deg, $color-primary, $color-secondary);
 
         &__list {
             margin: inherit;
-            padding: 1rem;
-            padding-left: 2rem;
+            padding: 1rem 0 0 2rem;;
+        }
+        
+        &__mail {
+            text-decoration: none;
+            color: inherit; 
+            margin: 0 0 4rem 2rem;
         }
 }
        
@@ -614,12 +619,7 @@ $color-degraded: linear-gradient(-10deg, $color-primary, $color-secondary);
 
 .mention {
     list-style-type: none;
-    padding-bottom: 0.5rem;
-        &__mail {
-            list-style-type: none;
-            text-decoration: none;
-            color: white; 
-        }
+    padding-bottom: 0.5rem;   
 }
 
 @media only screen and (max-width:761px) {
@@ -694,6 +694,10 @@ $color-degraded: linear-gradient(-10deg, $color-primary, $color-secondary);
         &__list {
             padding-left: 0.8rem;
         }
+
+        &__mail {
+            margin-left: 0.8rem;
+        }
     }
 }
 
@@ -718,11 +722,12 @@ $color-degraded: linear-gradient(-10deg, $color-primary, $color-secondary);
     .header {
         
         &__title {
-            font-size: 1.7rem;
+            font-size: 7vw;
+
         }
 
         &__icon {
-            top: 1.5rem;
+            top: 1.6rem;
             right: 2rem;
             font-size: 1.6rem;
         }
@@ -730,7 +735,7 @@ $color-degraded: linear-gradient(-10deg, $color-primary, $color-secondary);
 
     .article {
         width: 340px;
-        margin: 1rem 0.5rem;
+        margin: 1rem 0.5rem 1rem 0.3rem;
 
         &__describe {
             max-width: 280px;
