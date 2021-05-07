@@ -1,0 +1,4 @@
+/* Declencheur animation Coeurs */
+.description__icon--fill:hover {
+    @include animated-heart;
+}

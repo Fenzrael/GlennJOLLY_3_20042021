@@ -1,0 +1,12 @@
+/*Couleurs du site*/
+$color-primary: #9356DC;
+$color-secondary: #FF79DA;
+$color-tertiary: #99E2D0;
+
+$color-lightgrey: #f6f6f6;
+$color-middlegrey: #eaeaea;
+$color-fullgrey: #7b7b7b;
+$color-white: white;
+
+/*Couleur dégradé (violet/rose)*/
+$color-degraded: linear-gradient(-10deg, $color-primary, $color-secondary);

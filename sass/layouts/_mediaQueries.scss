@@ -1,0 +1,134 @@
+/* media Queries du Site */
+@media only screen and (max-width:761px) {
+    .heading {
+        display: block;
+        &__title {
+            text-align: center;
+            font-weight: 500;
+            font-size: 2rem;
+        }
+    }
+
+    .search {
+        width: auto;
+        &__icon {
+            width:auto;
+            margin-left: 3.5rem;
+        }
+
+        &__text-area {
+            width: 0;
+        }
+    }
+
+    .fonction {
+        &__title {
+            margin: 2rem 0 0 0.7rem;
+            font-size: 1.2rem;
+        }
+
+        &__list {
+            margin-bottom: 3rem;
+        }
+    }
+
+    .choice, .composition, .tasty {
+        width: 17rem;
+        font-weight: bold;
+    }
+
+    .reservation__title {
+        margin-left: 0.5rem;
+        font-weight: bold;
+    }
+
+    .selection {
+        width: auto;
+    }
+
+    .menuCard__title {
+        font-size: 1.2rem;
+        margin-left: 0.7rem;
+    }
+
+    .card {
+        display: inline-block;
+        flex: none;
+        margin: 0;
+        margin: 0.8rem;
+        width: auto;
+            &__image {
+                width: 100%;  
+            }
+    }
+
+    .information {
+    
+        &__title {
+            padding-left: 0.8rem;
+        }
+
+        &__list {
+            padding-left: 0.8rem;
+        }
+
+        &__mail {
+            margin-left: 0.8rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .heading1 {
+        justify-content: center;
+        position: relative;
+         
+        &__return {
+            position:absolute;
+            margin:inherit;
+            left:1rem;
+        }
+
+        &__title {
+            font-weight: 300;
+            justify-self: center;
+            margin: 1rem 0
+        }
+    }
+
+    .header {
+        
+        &__title {
+            font-size: 7vw;
+
+        }
+
+        &__icon {
+            top: 1.6rem;
+            right: 2rem;
+            font-size: 1.6rem;
+        }
+    }
+
+    .article {
+        width: 340px;
+        margin: 1rem 0.5rem 1rem 0.3rem;
+
+        &__describe {
+            max-width: 280px;
+        }
+
+        &:hover &__info {
+            width: 200px;
+        }
+    }
+
+    .entrance, .plate, .dessert {
+        &__title {
+            color: $color-fullgrey;
+            margin-left: 0.5rem;
+        }
+    }
+}
+
+

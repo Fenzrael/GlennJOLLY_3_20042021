@@ -1,0 +1,56 @@
+/* Formatage Pied de page */
+.information {
+    background-color: #353535;
+    color: $color-white;
+    padding: 0;
+    margin: 0;
+
+        &__title{
+            font-family:'Shrikhand';
+            font-weight: 500;
+            margin: inherit;
+            padding: 1rem;
+            padding-left: 2rem;
+            padding-bottom: 0;
+        }
+
+        &__list {
+            margin: inherit;
+            padding: 1rem 0 0 2rem;;
+        }
+        
+        &__mail {
+            text-decoration: none;
+            color: inherit; 
+            margin: 0 0 4rem 2rem;
+        }
+}
+
+.proposition {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-bottom: 0.5rem;
+
+        &__text {
+            margin: 0;
+            margin-left: 1rem;
+        }
+}
+
+.partnair {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-bottom: 0.5rem;
+
+        &__text {
+            margin: 0;
+            margin-left: 0.5rem;
+        }
+}
+
+.mention {
+    list-style-type: none;
+    padding-bottom: 0.5rem;   
+}
