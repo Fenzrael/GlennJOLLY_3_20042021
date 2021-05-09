@@ -1,4 +1,8 @@
 /* Code uniquement pour l'accueil */
+
+/* Formatage Loader*/
+
+/* Loader cercles*/
 .loader {
     position: fixed;
     width: 100%;
@@ -9,7 +13,7 @@
     display: flex;
     justify-content:center;
     align-items: center;
-    animation: disappear 3s ease-out 2s both;
+    animation: disappear 3s ease-out 2s forwards;
     &__item {
         align-self: start;
         margin-top:1rem;
@@ -19,7 +23,7 @@
         border-top-color: $color-secondary;
         border-radius: 50px;
         position: relative;
-        animation: loading 1s linear infinite;
+        animation: loading 1s linear infinite both;
         &:before {
             content:'';
             position: absolute;
@@ -30,7 +34,7 @@
             border-radius: 50px;
             border: 6px solid transparent;
             border-top-color: $color-primary;
-            animation: loading 5s linear infinite;
+            animation: loading 5s linear infinite both;
         }
 
         &:after {
@@ -43,10 +47,11 @@
             border-radius: 50px;
             border: 6px solid transparent;
             border-top-color: $color-tertiary;
-            animation: loading 8s linear infinite;
+            animation: loading 8s linear infinite both;
         }
     }
     
+    /* Loader couverts*/
     &__covered1 {
         position: absolute;
         top: 30%;
@@ -62,7 +67,7 @@
         left: 43%;
         width:200px;
         height: auto;
-        animation: move_y 2s linear 0.5s infinite both;
+        animation: move_y 2s linear 0.2s infinite both;
     }
 
     &__covered3 {
@@ -71,10 +76,12 @@
         left: 48%;
         width:200px;
         height: auto;
-        animation: move_y 2s linear 0.8s infinite both;
+        animation: move_y 2s linear 0.4s infinite both;
     }
 
 }
+
+/*header acuueil*/
 .heading {
     display: flex;
     flex-wrap: wrap;
@@ -143,6 +150,7 @@
         }    
 }
 
+/* Section Fonctionnement*/
 .fonction {
     display: flex;
     flex-direction: column;
@@ -229,6 +237,7 @@
         }
 }
 
+/* Cartes des Menus*/
 .menuCard {
     border:1px solid $color-lightgrey;
     background-color: $color-lightgrey;

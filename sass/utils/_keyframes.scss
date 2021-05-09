@@ -1,5 +1,8 @@
 /* Keyframes du Site */
 
+/* Animation loader*/
+
+/* Animation loader Cercles*/
 @keyframes loading {
     0% {
         transform: rotate(0deg);
@@ -16,10 +19,12 @@
     }
     
     100% {
-        opacity: 0.9;
+        opacity: 0;
         z-index: -1;
     }
 }
+
+/*Animation Couverts*/
 @keyframes move_y {
     0% {
         transform: translateY(-80px);
@@ -29,6 +34,8 @@
         transform: translateY(80px);
     }
 }
+
+/*Animation Coeur*/
 @keyframes apparition {
     0% {
         opacity: 0;
@@ -53,6 +60,9 @@
     }
 }
 
+/*Animation Check tournant*/
+
+/*Rotation Check*/
 @keyframes rotate360 {
     0% {
         transform: rotate(90deg);
@@ -68,6 +78,7 @@
     }
 }
 
+/*Deplacement check sur la droite*/
 @keyframes margin-right {
     0% {
         margin-right: -4rem;
@@ -89,6 +100,7 @@
     }
 }
 
+/* Animation Apparition plats*/
 @keyframes delay-appear {
     0% {
         transform: translateY(100px);

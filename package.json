@@ -1,10 +1,16 @@
+/* Package json*/
 {
+  /*Description Auteur et Projet*/
   "name": "glennjolly_3_20042021",
   "version": "1.0.0",
   "description": "Projet_3_openclassroom",
   "main": "index.js",
+
+  /*Differents Scripts*/
   "scripts": {
+    /*Script Lancement Sass*/
     "sass": "sass --watch ./sass/style.scss:./css/style.css",
+    /*Script Lancement Autoprefixer*/
     "prefix": "postcss ./css/style.css --use autoprefixer -d ./css/prefixed/"
   },
   "repository": {

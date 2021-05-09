@@ -1,4 +1,5 @@
 @charset "UTF-8";
+/* Sommaire des Differents partials scss */
 /* Polices du site*/
 @font-face {
   font-family: "Roboto";
@@ -20,6 +21,8 @@ body {
 
 /* Mixins du site*/
 /* Keyframes du Site */
+/* Animation loader*/
+/* Animation loader Cercles*/
 @keyframes loading {
   0% {
     transform: rotate(0deg);
@@ -33,10 +36,11 @@ body {
     opacity: 0.9;
   }
   100% {
-    opacity: 0.9;
+    opacity: 0;
     z-index: -1;
   }
 }
+/*Animation Couverts*/
 @keyframes move_y {
   0% {
     transform: translateY(-80px);
@@ -45,6 +49,7 @@ body {
     transform: translateY(80px);
   }
 }
+/*Animation Coeur*/
 @keyframes apparition {
   0% {
     opacity: 0;
@@ -65,6 +70,8 @@ body {
     transform: scale(1.1);
   }
 }
+/*Animation Check tournant*/
+/*Rotation Check*/
 @keyframes rotate360 {
   0% {
     transform: rotate(90deg);
@@ -79,6 +86,7 @@ body {
     transform: rotate(360deg);
   }
 }
+/*Deplacement check sur la droite*/
 @keyframes margin-right {
   0% {
     margin-right: -4rem;
@@ -96,6 +104,7 @@ body {
     margin-right: 0rem;
   }
 }
+/* Animation Apparition plats*/
 @keyframes delay-appear {
   0% {
     transform: translateY(100px);
@@ -119,6 +128,7 @@ body {
   }
 }
 /* Boucles */
+/* Boucle pour les articles */
 .delay_0 {
   animation: delay-appear 0.6s linear 0s both;
 }
@@ -160,6 +170,8 @@ body {
 }
 
 /* Code uniquement pour l'accueil */
+/* Formatage Loader*/
+/* Loader cercles*/
 .loader {
   position: fixed;
   width: 100%;
@@ -170,7 +182,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: disappear 3s ease-out 2s both;
+  animation: disappear 3s ease-out 2s forwards;
+  /* Loader couverts*/
 }
 .loader__item {
   align-self: start;
@@ -181,7 +194,7 @@ body {
   border-top-color: #FF79DA;
   border-radius: 50px;
   position: relative;
-  animation: loading 1s linear infinite;
+  animation: loading 1s linear infinite both;
 }
 .loader__item:before {
   content: "";
@@ -193,7 +206,7 @@ body {
   border-radius: 50px;
   border: 6px solid transparent;
   border-top-color: #9356DC;
-  animation: loading 5s linear infinite;
+  animation: loading 5s linear infinite both;
 }
 .loader__item:after {
   content: "";
@@ -205,7 +218,7 @@ body {
   border-radius: 50px;
   border: 6px solid transparent;
   border-top-color: #99E2D0;
-  animation: loading 8s linear infinite;
+  animation: loading 8s linear infinite both;
 }
 .loader__covered1 {
   position: absolute;
@@ -221,7 +234,7 @@ body {
   left: 43%;
   width: 200px;
   height: auto;
-  animation: move_y 2s linear 0.5s infinite both;
+  animation: move_y 2s linear 0.2s infinite both;
 }
 .loader__covered3 {
   position: absolute;
@@ -229,9 +242,10 @@ body {
   left: 48%;
   width: 200px;
   height: auto;
-  animation: move_y 2s linear 0.8s infinite both;
+  animation: move_y 2s linear 0.4s infinite both;
 }
 
+/*header acuueil*/
 .heading {
   display: flex;
   flex-wrap: wrap;
@@ -308,6 +322,7 @@ body {
   box-shadow: 6px 6px 3px #dadada;
 }
 
+/* Section Fonctionnement*/
 .fonction {
   display: flex;
   flex-direction: column;
@@ -422,6 +437,7 @@ body {
   color: #9356DC;
 }
 
+/* Cartes des Menus*/
 .menuCard {
   border: 1px solid #f6f6f6;
   background-color: #f6f6f6;
@@ -497,6 +513,7 @@ body {
 }
 
 /* Formatage Pages du Site*/
+/*Header des Menus*/
 .heading1 {
   display: flex;
   justify-content: space-between;
@@ -513,6 +530,7 @@ body {
   margin-left: 2rem;
 }
 
+/* Image de Presentation*/
 .picture {
   max-width: 100%;
   max-height: 35rem;
@@ -520,6 +538,8 @@ body {
   object-fit: cover;
 }
 
+/* Implementation des menus Et des Plats*/
+/* Disposition des elements dans Menu*/
 .menu {
   display: flex;
   justify-content: space-around;
@@ -553,6 +573,7 @@ body {
   box-shadow: 6px 6px 3px #dadada;
 }
 
+/*Titre du Restaurant + icone coeur*/
 .header {
   display: flex;
   justify-content: flex-start;
@@ -581,6 +602,7 @@ body {
   opacity: 0;
 }
 
+/* Formatage des differents plats */
 .article {
   display: flex;
   flex-direction: row;
@@ -647,6 +669,7 @@ body {
   animation: rotate360 0.3s ease-in-out 0.2s both;
 }
 
+/* Formatage Titres designant les plats( Entree, plat, Desserts)*/
 .entrance__title, .plate__title, .dessert__title {
   color: #7b7b7b;
   margin-left: 1rem;

@@ -1,5 +1,6 @@
 /* Boucles */
 
+/* Boucle pour les articles */
 @for $i from 0 through 9 {
     .delay_#{$i} { 
         animation: delay-appear 0.6s linear 0.2s*$i both;
