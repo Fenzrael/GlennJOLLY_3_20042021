@@ -68,8 +68,8 @@ Chrome et Firefox.
 ## Screenshots
 ***
 
-#### version Desktop                                                              
+#### Version Desktop                                                              
 ![Image text](/img/readme/Site_Ohmyfood.png/)                                     
 ***
-####Version Mobile
+#### Version Mobile
 ![Image text](/img/readme/version_mobile.png/)
