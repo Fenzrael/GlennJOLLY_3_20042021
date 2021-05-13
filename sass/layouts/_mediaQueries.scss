@@ -79,6 +79,21 @@
 }
 
 @media only screen and (max-width: 375px) {
+
+    .loader {
+        &__covered1 {
+            left:20%;
+        }
+
+        &__covered2 {
+            left:25%;
+        }
+
+        &__covered3 {
+            left:30%;
+        }
+    }
+    
     .heading1 {
         justify-content: center;
         position: relative;

@@ -810,6 +810,16 @@ body {
   }
 }
 @media only screen and (max-width: 375px) {
+  .loader__covered1 {
+    left: 20%;
+  }
+  .loader__covered2 {
+    left: 25%;
+  }
+  .loader__covered3 {
+    left: 30%;
+  }
+
   .heading1 {
     justify-content: center;
     position: relative;
